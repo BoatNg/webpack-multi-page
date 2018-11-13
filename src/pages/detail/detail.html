@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>车系详情</title>
+  <meta name="keywords" content="优车选,车主价格,买车,优惠">
+  <meta name="description" content="优车选告诉你，买车真实成交价，买车不花冤枉钱">
+</head>
+
+<body>
+  <div class="height__min">
+
+    ${require('../../common/html/header.html')}
+
+    <div class="pricebar__wrap content__wrap">
+      <div class="pricebar content clearfix" id="series-info">
+
+      </div>
+    </div>
+
+    <div class="price__card_wrap content__wrap">
+      <div class="price__card_list clearfix content" id="new-price">
+        <div class="loading__icon">
+          <img src="../../assert/img/loading.gif" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="lookmore__wrap content__wrap" id="slick-wrap-parent">
+      <div class="lookmore content">
+        <h3>查看更多其他车型真实成交价</h3>
+        <div class="morecar__wrap clearfix">
+          <div class="slick__class" id="slick-wrap">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  ${require('../../common/html/footer.html')}
+  ${require('../../common/html/loading.html')}
+  <img src="../../assert/img/fapiao.png" alt="" style="display:none" id="fapiao">
+  ${require('../../common/html/baiduhm.html')}
+
+</body>
+
+</html>

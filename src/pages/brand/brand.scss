@@ -1,0 +1,90 @@
+@import '../../common/css/reset.scss';
+@import '../../common/css/common.scss';
+.brand_wrap {
+  // padding-bottom: 50px;
+  min-height: 95%;
+}
+
+.crumbs__wrap {
+  padding-top: 14px;
+  >a {
+    display: inline-block;
+  }
+}
+
+.logobar__wrap {
+  padding-top: 33px;
+  padding-bottom: 32px;
+  img {
+    float: left;
+    width: 66px;
+    height: 66px;
+  }
+  h3 {
+    padding-left: 15px;
+    font-size: 36px;
+    line-height: 66px;
+    color: #333333;
+    float: left;
+  }
+}
+
+.brand__item_wrap {
+  padding-bottom: 53px;
+  h3 {
+    border-bottom: 1px solid #e2e1dd;
+    span {
+      font-size: 18px;
+      color: #333333;
+      text-align: left;
+      display: inline-block;
+      padding-bottom: 3px;
+      border-bottom: 2px solid #536dfe;
+    }
+  }
+  ul {
+    li {
+      // border: 1px solid blueviolet;
+      margin-top: 38px;
+      width: 137px;
+      float: left;
+      margin-right: 103px;
+      &:nth-child(5n) {
+        margin-right: 0;
+      }
+      &:hover {
+        p {
+          color: #536dfe;
+        }
+      }
+      >a {
+        display: block;
+        position: relative;
+        >p {
+          padding-top: 12px;
+          font-size: 16px;
+          color: #333333;
+          text-align: center;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+        >img {
+          height: 100px;
+        }
+        &:hover {
+          &:after {
+            display: block;
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, .25)
+          }
+        }
+      }
+    }
+  }
+}

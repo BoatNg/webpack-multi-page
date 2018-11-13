@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>优车选 - 看车主真实成交价，买车不花冤枉钱</title>
+  <meta name="keywords" content="优车选,车主价格,买车">
+  <meta name="description" content="优车选(youchexuan.com)，了解车主成交价，看购车明细清单，价格透明，买车再也不花冤枉钱。">
+</head>
+
+<body>
+  <div class="height__max">
+    <div class="content__wrap header__wrap_tran header__wrap">
+      <div class="content header">
+        <span>
+          <a href="/">
+            <img src="../../assert/img/logo.png" alt="">
+          </a>
+        </span>
+        <span id="wechat-public">关注微信，及时获取当地最新成交价</span>
+        <div class="wechat__qrcode_wrap">
+          <a href="javascript:;">
+            <img src="../../assert/img/qrcode.jpg" alt="">
+          </a>
+          <p>扫码关注</p>
+        </div>
+      </div>
+    </div>
+    <div class="content__wrap img__wrap">
+      <div class="img__content">
+        <img src="../../assert/img/banner_m.jpg" alt="">
+      </div>
+      <div class="form__wrap">
+        <div class="form__content">
+          <h3>立即搜索品牌或车型名称</h3>
+          <div class="input__group">
+            <input type="text" class="form-control" placeholder="输入您感兴趣的车型" aria-describedby="basic-addon2" id="search-input"
+              autocomplete="off">
+            <span class="input-group-addon" id="search-btn">立即搜索</span>
+            <div class="resutl__wrap" id="search-result" style="display:none">
+
+            </div>
+          </div>
+          <div class="search__wrap" id="hot-research">
+            热门搜索：&nbsp;
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="brands__wrap content__wrap">
+      <div class="brands__content content">
+        <h3>常见品牌</h3>
+        <div class="brands__list">
+          <ul class="clearfix" id="brand-list">
+            <!-- <li>
+                  <a href="javascript">
+                    <img src="../../assert/img/icon_2.png" alt="">
+                    <p>大众</p>
+                  </a>
+                </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="newprice__wrap content__wrap">
+      <div class="newprice__content content">
+        <h3>最新成交价</h3>
+        <div class="clearfix" id="new-price">
+
+        </div>
+      </div>
+    </div>
+    <div class="newprice__wrap_2 content__wrap">
+      <div class="newprice__content_2 content clearfix" id="new-price-1">
+      </div>
+    </div>
+  </div>
+  <img src="../../assert/img/fapiao.png" alt="" style="display:none" id="fapiao">
+
+
+  ${require('../../common/html/footer.html')}
+  ${require('../../common/html/loading.html')}
+  ${require('../../common/html/baiduhm.html')}
+
+
+</body>
+
+</html>

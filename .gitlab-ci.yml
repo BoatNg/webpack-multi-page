@@ -1,0 +1,75 @@
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - deploy
+
+variables:
+  IMAGE: registry-vpc.cn-hangzhou.aliyuncs.com/afanticar/pc-youchexuan
+
+build-test:
+  stage: build
+  tags:
+    - shell
+  only:
+    - develop
+  script:
+    - echo $(git describe --tags --always)
+    - cnpm i
+    - npm run dev-build
+    - docker build . -t $IMAGE:test-latest
+    - docker push $IMAGE:test-latest
+    - docker tag $IMAGE:test-latest $IMAGE:$(git describe --tags --always)
+    - docker push $IMAGE:$(git describe --tags --always)
+    - echo done
+
+build-production:
+  stage: build
+  tags:
+    - shell
+  only:
+    - tags
+  script:
+    - echo $CI_COMMIT_TAG
+    - echo $CI_COMMIT_TAG > ./VERSION
+    - cnpm i
+    - npm run build
+    - docker build . -t $IMAGE:latest
+    - docker push $IMAGE:latest
+    - docker tag $IMAGE:latest $IMAGE:$CI_COMMIT_TAG
+    - docker push $IMAGE:$CI_COMMIT_TAG
+    - echo done 
+
+deploy-test:
+  stage: deploy
+  tags:
+    - kubectl
+  only:
+    - develop
+  environment:
+    name: staging
+    url: http://develop.www.youchexuan.com
+  script:
+    - echo $(git describe --tags --always)
+    - export KUBECONFIG=$HOME/.kube/config
+    - kubectl set image deployment/pc-youchexuan-nginx-test pc-youchexuan-nginx-test=$IMAGE:$(git describe --tags --always) -n=pc-youchexuan
+    - echo done
+
+deploy-production:
+  stage: deploy
+  tags:
+    - kubectl
+  only:
+    - tags
+  environment:
+    name: production
+    url: https://www.youchexuan.com
+  script:
+    - echo $CI_COMMIT_TAG
+    - export KUBECONFIG=$HOME/.kube/aliyun01
+    - kubectl set image deployment/pc-youchexuan-nginx-production pc-youchexuan-nginx-production=$IMAGE:$CI_COMMIT_TAG -n=pc-youchexuan
+    - echo done
+

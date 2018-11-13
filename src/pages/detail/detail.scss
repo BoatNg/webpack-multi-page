@@ -1,0 +1,177 @@
+@import '../../common/css/reset.scss';
+@import '../../common/css/common.scss';
+@import '../../common/css/slick.scss';
+.pricebar__wrap {
+  background: #fff; // transition: all ease-in-out 200ms;
+}
+
+.pricebar {
+  padding-top: 15px;
+  .pricebar__car {
+    float: left;
+    >p {
+      padding-bottom: 35px;
+    }
+  }
+}
+
+.pricebar__pan {
+  position: relative;
+  padding-left: 200px;
+  padding-bottom: 45px;
+  >a {
+    display: block;
+    position: absolute;
+    width: 180px;
+    height: 100px;
+    overflow: hidden;
+    top: 0;
+    left: 0; // border: 1px solid #333333;
+    >img {
+      position: relative;
+      top: -30px;
+    }
+  }
+  >h3 {
+    font-size: 24px;
+    color: #333333;
+    text-align: left;
+    padding-bottom: 18px;
+  }
+  >p {
+    font-size: 20px;
+    color: #333333;
+    text-align: left;
+  }
+}
+
+.pricebar__content {
+  float: right;
+  .pricebar__item_padding {
+    padding-left: 46px;
+  }
+  .pricebar__item {
+    float: right;
+    padding-top: 55px;
+    padding-right: 49px;
+    position: relative;
+    h3 {
+      font-size: 24px;
+      color: #333333;
+      text-align: center;
+      padding-bottom: 18px;
+    }
+    p {
+      font-size: 20px;
+      color: #c4c9cb;
+      text-align: center;
+      font-weight: 200;
+    }
+    &:after {
+      content: " ";
+      display: block;
+      height: 44px;
+      width: 2px;
+      background: #f4f4f5;
+      position: absolute;
+      right: 0;
+      top: 60px;
+    }
+  }
+  .pricebar__item_img {
+    float: right;
+    padding-left: 49px;
+    padding-bottom: 15px;
+    img {
+      width: 115px;
+      height: 115px;
+    }
+    p {
+      padding-top: 6px;
+      text-align: center;
+    }
+  }
+}
+
+.price__card_wrap {
+  background: #f6f6f6;
+  border-bottom: 1px solid #f6f6f6;
+  border-top: 1px solid #f6f6f6;
+  box-shadow: 0px 0px 20px #e8e8e8 inset;
+  .price__card_list {
+    padding: 60px 40px 60px 40px;
+    color: #1e2939;
+  } 
+}
+
+//  -----
+.lookmore__wrap {
+  background: #fff; // padding-bottom: 50px;
+  .lookmore {
+    padding-top: 40px;
+    >h3 {
+      font-size: 24px;
+      color: #333333;
+      letter-spacing: 0;
+      text-align: center;
+    }
+    .morecar__wrap {
+      height: 225px;
+      width: 100%;
+      padding: 40px 40px 60px 40px;
+      // overflow: hidden;
+      position: relative;
+      ul {
+        position: absolute;
+        width: 9999px;
+      }
+     
+    }
+  }
+}
+
+.slick__item_test {
+  >a {
+    display: block;
+    position: relative;
+    transition: all 350ms;
+    &:hover {
+      &:after {
+        display: block;
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, .25)
+      }
+      >h3 {
+        color: #536dfe;
+      }
+    }
+    img {
+      margin: 0 auto;
+      width: 140px;
+    }
+    >h3 {
+      // padding-top: 20px;
+      font-size: 16px;
+      color: #333333;
+      text-align: center;
+    }
+    p {
+      padding-top: 10px;
+      font-size: 16px;
+      color: #c4c9cb;
+      text-align: center;
+      b {
+        color: #333;
+      }
+    }
+  }
+}
+
+.height__min {
+  min-height: 95%;
+}

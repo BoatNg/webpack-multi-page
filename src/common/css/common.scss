@@ -1,0 +1,254 @@
+@import 'nprogress';
+@import "toastr";
+$bg__brown_deep: #363636;
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Segoe UI", "Helvetica Neue", "PingFang SC", "Noto Sans", "Noto Sans CJK SC", "Microsoft YaHei", "微软雅黑", sans-serif;
+  height: 100%;
+  font-size: 14px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content__wrap {
+  width: 100%;
+  .content {
+    width: 1100px;
+    margin: 0 auto;
+  }
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.header__wrap {
+  background: $bg__brown_deep;
+  height: 50px;
+  .header {
+    line-height: 50px;
+    position: relative;
+    span {
+      a {
+        display: inline-block
+      }
+      color: #fff;
+      &:nth-child(2) {
+        color: #fff;
+        float: right;
+        cursor: pointer;
+      }
+      &:first-child {
+        display: inline-block;
+        padding-top: 8px;
+        width: 90px;
+      }
+    }
+  }
+}
+
+.footer__wrap {
+  background: $bg__brown_deep;
+  height: 50px;
+  line-height: 50px; // position: fixed;
+  // bottom: 0;
+  .footer {
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+  }
+}
+
+.header__wrap_tran {
+  background: rgba(51, 51, 51, 0.50);
+  position: absolute;
+  z-index: 10;
+  top: 0;
+}
+
+// price card
+.price__card_item {
+  float: left;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  box-shadow: 0 3px 4px 1px rgba(221, 221, 221, 0.30);
+  border-radius: 5px;
+  width: 305px;
+  padding-bottom: 40px;
+  margin-right: 49px;
+  transition: all ease-in-out .3s;
+  position: relative;
+  &:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 10px rgba(200, 200, 200, 0.5);
+  }
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+  .card__item_header {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f4f4f5;
+    p {
+      margin: 0 auto;
+      width: 78px;
+      height: 78px;
+      border-radius: 34.5px;
+      overflow: hidden;
+    }
+    h3 {
+      padding-top: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #1e2939;
+      letter-spacing: 0;
+      text-align: center;
+    }
+  }
+}
+
+.fontsize_18 {
+  font-size: 18px;
+}
+
+.font_red {
+  color: #e73828;
+}
+
+.font_grey {
+  color: #c4c9cb;
+}
+
+.font_333 {
+  color: #333;
+}
+
+.font__mask {
+  position: relative;
+  filter: blur(3px);
+  &::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(100, 100, 100, 0.2);
+  }
+}
+
+.detail__wrap {
+  padding-left: 20px;
+  padding-right: 19px;
+  padding-top: 5px;
+  .detail__list {
+    position: relative;
+    border-bottom: 1px solid #f4f4f5;
+    padding-bottom: 7px;
+    padding-top: 16px;
+    >li {
+      padding-bottom: 12px;
+      span {
+        display: inline-block;
+        &:last-child {
+          max-width: 70%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          float: right;
+        }
+      }
+    }
+    >.add_bottom {
+      padding-bottom: 16px;
+    }
+    >img {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: 26px;
+      left: 100px;
+    }
+  }
+}
+
+.price__qrcode {
+  padding-top: 30px;
+  >a {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+  >p {
+    font-size: 12px;
+    color: #333333;
+    letter-spacing: 0;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+}
+
+.loading {
+  position: fixed;
+  z-index: 100;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.wechat__qrcode_wrap {
+  position: absolute;
+  z-index: 100;
+  top: 60px;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e2e1dd;
+  border-radius: 10px;
+  width: 210px;
+  display: none;
+  >a {
+    display: block;
+    padding: 5px 10px 0 10px;
+  }
+  p {
+    font-size: 14px;
+    color: #17191e;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 0;
+    height: 30px;
+    padding-top: 10px;
+  }
+  &::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: -6px;
+    right: 30px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-top: 1px solid #e2e1dd;
+    border-left: 1px solid #e2e1dd;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    transform: rotateZ(45deg);
+  }
+}
+
+.loading__icon {
+  >img {
+    width: 100px;
+    margin: 0 auto;
+  }
+}
